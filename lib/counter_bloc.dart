@@ -27,4 +27,9 @@ class CounterBloc {
       },
     );
   }
+
+  void dispose() {
+    _stateStreamController.close();
+    _eventStreamController.close();
+  }
 }

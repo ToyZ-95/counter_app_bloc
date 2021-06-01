@@ -18,8 +18,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   final counterBloc = CounterBloc();
+
+  @override
+  void dispose() {
+    counterBloc.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
